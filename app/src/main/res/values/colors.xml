@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="icon_bg">#FF10171F</color>
+    <color name="app_bg">#FF141D26</color>
+    <color name="card_bg">#FF1F2A33</color>
+    <color name="widget_bg">#EE1F2A33</color>
+    <color name="widget_header">#FF16202A</color>
+    <color name="text_primary">#FFF2F5F7</color>
+    <color name="text_secondary">#FF9AAAB8</color>
+
+    <color name="sev_not_classified">#FF97AAB3</color>
+    <color name="sev_information">#FF7499FF</color>
+    <color name="sev_warning">#FFFFC859</color>
+    <color name="sev_average">#FFFFA059</color>
+    <color name="sev_high">#FFE97659</color>
+    <color name="sev_disaster">#FFE45959</color>
+</resources>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cfg_title"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:paddingBottom="8dp" />
+
+        <TextView
+            android:id="@+id/active_server_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:textColor="@color/text_secondary" />
+
+        <Button
+            android:id="@+id/btn_manage_servers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cfg_manage_servers" />
+
+        <CheckBox
+            android:id="@+id/check_hide_acked"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/cfg_hide_acked" />
+
+        <CheckBox
+            android:id="@+id/check_show_suppressed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cfg_show_suppressed" />
+
+        <CheckBox
+            android:id="@+id/check_compact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cfg_compact" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cfg_interval_label"
+            android:paddingTop="16dp" />
+
+        <Spinner
+            android:id="@+id/spinner_interval"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cfg_min_severity_label"
+            android:paddingTop="16dp" />
+
+        <Spinner
+            android:id="@+id/spinner_severity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/cfg_save" />
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="12dp"
+            android:textSize="14sp" />
+    </LinearLayout>
+</ScrollView>

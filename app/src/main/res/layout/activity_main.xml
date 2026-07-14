@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <!-- ===== Pagina: Problemen ===== -->
+        <LinearLayout
+            android:id="@+id/page_problems"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <EditText
+                    android:id="@+id/prob_search"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/search_hint"
+                    android:inputType="text"
+                    android:importantForAutofill="no" />
+
+                <Spinner
+                    android:id="@+id/prob_severity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageButton
+                    android:id="@+id/prob_refresh"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@android:drawable/ic_popup_sync"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Refresh" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/prob_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/text_secondary"
+                android:paddingBottom="4dp" />
+
+            <ListView
+                android:id="@+id/prob_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="#22FFFFFF"
+                android:dividerHeight="1dp" />
+        </LinearLayout>
+
+        <!-- ===== Pagina: Hosts ===== -->
+        <LinearLayout
+            android:id="@+id/page_hosts"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <Spinner
+                    android:id="@+id/host_group"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content" />
+
+                <ImageButton
+                    android:id="@+id/host_refresh"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@android:drawable/ic_popup_sync"
+                    android:background="?android:attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Refresh" />
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/host_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/search_hint"
+                android:inputType="text"
+                android:importantForAutofill="no" />
+
+            <TextView
+                android:id="@+id/host_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/text_secondary"
+                android:paddingBottom="4dp" />
+
+            <ListView
+                android:id="@+id/host_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="#22FFFFFF"
+                android:dividerHeight="1dp" />
+        </LinearLayout>
+
+        <!-- ===== Pagina: Instellingen ===== -->
+        <ScrollView
+            android:id="@+id/page_settings"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/servers_title"
+                    android:textStyle="bold"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:id="@+id/server_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+
+                <Button
+                    android:id="@+id/btn_add_server"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/server_add" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/notif_title"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:paddingTop="24dp" />
+
+                <CheckBox
+                    android:id="@+id/check_notify"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/notif_enable" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/notif_min_severity"
+                        android:paddingEnd="12dp" />
+
+                    <Spinner
+                        android:id="@+id/notify_severity"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/widget_settings_title"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:paddingTop="24dp" />
+
+                <Button
+                    android:id="@+id/btn_widget_settings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/widget_settings_open" />
+
+                <TextView
+                    android:id="@+id/about"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="24dp"
+                    android:textSize="12sp"
+                    android:textColor="@color/text_secondary" />
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
+
+    <!-- ===== Tabbalk ===== -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:orientation="horizontal"
+        android:background="@color/widget_header">
+
+        <TextView
+            android:id="@+id/tab_problems"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/tab_problems"
+            android:textStyle="bold"
+            android:background="?android:attr/selectableItemBackground" />
+
+        <TextView
+            android:id="@+id/tab_hosts"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/tab_hosts"
+            android:textStyle="bold"
+            android:background="?android:attr/selectableItemBackground" />
+
+        <TextView
+            android:id="@+id/tab_settings"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/tab_settings"
+            android:textStyle="bold"
+            android:background="?android:attr/selectableItemBackground" />
+    </LinearLayout>
+</LinearLayout>

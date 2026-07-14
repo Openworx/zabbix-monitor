@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="android:Theme.Material">
+        <item name="android:colorPrimary">@color/widget_header</item>
+        <item name="android:colorPrimaryDark">#FF10171F</item>
+        <item name="android:colorAccent">@color/sev_information</item>
+        <item name="android:windowBackground">@color/app_bg</item>
+        <item name="android:statusBarColor">#FF10171F</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+    </style>
+</resources>

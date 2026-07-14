@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Openworx Mobile for Zabbix</string>
+    <string name="widget_label">Zabbix problems</string>
+    <string name="widget_description">Shows the current problems from your Zabbix server</string>
+
+    <string name="cfg_title">Widget settings</string>
+    <string name="cfg_url_hint">Server URL (e.g. https://zabbix.example.com)</string>
+    <string name="cfg_token_hint">API token</string>
+    <string name="cfg_interval_label">Refresh interval</string>
+    <string name="cfg_min_severity_label">Minimum severity</string>
+    <string name="cfg_ignore_ssl">Allow self-signed certificates (insecure)</string>
+    <string name="cfg_test">Test connection</string>
+    <string name="cfg_save">Save</string>
+    <string name="cfg_hide_acked">Hide acknowledged problems</string>
+    <string name="cfg_show_suppressed">Show suppressed problems</string>
+    <string name="cfg_compact">Compact view (one line per problem)</string>
+    <string name="cfg_manage_servers">Manage servers</string>
+
+    <!-- Main app -->
+    <string name="tab_problems">Problems</string>
+    <string name="tab_hosts">Hosts</string>
+    <string name="tab_settings">Settings</string>
+    <string name="search_hint">Search…</string>
+    <string name="all_groups">All host groups</string>
+    <string name="no_data">No data</string>
+    <string name="loading">Loading…</string>
+    <string name="servers_title">Servers</string>
+    <string name="server_add">+ Add server</string>
+    <string name="notif_title">Notifications</string>
+    <string name="notif_enable">Notify on new problems</string>
+    <string name="notif_min_severity">Minimum severity</string>
+    <string name="widget_settings_title">Widget &amp; refresh</string>
+    <string name="widget_settings_open">Open widget settings</string>
+    <string name="ack_hint">Message (optional)</string>
+    <string name="btn_acknowledge">Acknowledge</string>
+    <string name="btn_unacknowledge">Unack</string>
+    <string name="btn_close_problem">Close problem</string>
+    <string name="btn_change_severity">Change severity</string>
+    <string name="btn_message">Post message</string>
+    <string name="server_name_hint">Name (e.g. Production)</string>
+    <string name="server_delete">Delete</string>
+    <string name="graph_title">Graph</string>
+    <string name="open_in_zabbix">Open in Zabbix</string>
+    <string name="actions_title">Actions</string>
+    <string name="history_title">History &amp; comments</string>
+
+    <string name="widget_empty">No problems 🎉</string>
+    <string name="widget_not_configured">Tap to configure Zabbix</string>
+    <string name="widget_error">Fetch failed — tap ⟳</string>
+</resources>
