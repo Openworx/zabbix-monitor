@@ -57,9 +57,19 @@ class ServerEditActivity : Activity() {
             show(status, "Testing…", false)
             executor.execute {
                 try {
-                    val api = ZabbixApi(u, t, ssl.isChecked)
+                    val api = ZabbixApi(u, cleanToken(t), ssl.isChecked)
                     val version = api.apiVersion()
-                    runOnUiThread { show(status, "✓ Connected to Zabbix $version", false) }
+                    // Also perform an authenticated call so an invalid token
+                    // is caught here instead of later in the app/widget.
+                    val problems = api.currentProblems(limit = 1)
+                    runOnUiThread {
+                        show(
+                            status,
+                            "✓ Connected to Zabbix $version — token OK" +
+                                if (problems.isEmpty()) ", no problems visible" else "",
+                            false
+                        )
+                    }
                 } catch (e: Exception) {
                     runOnUiThread { show(status, "✗ ${e.message}", true) }
                 }
@@ -74,7 +84,7 @@ class ServerEditActivity : Activity() {
             }
             server.name = name.text.toString().trim().ifEmpty { u.removePrefix("https://").removePrefix("http://") }
             server.url = u
-            server.token = t
+            server.token = cleanToken(t)
             server.ignoreSsl = ssl.isChecked
             ServerStore.save(this, server)
             RefreshWorker.schedulePeriodic(this)
@@ -82,6 +92,9 @@ class ServerEditActivity : Activity() {
             finish()
         }
     }
+
+    /** Strips ALL whitespace (spaces, tabs, newlines from copy-paste) out of a token. */
+    private fun cleanToken(t: String): String = t.replace(Regex("\\s"), "")
 
     private fun show(v: TextView, msg: String, error: Boolean) {
         v.text = msg

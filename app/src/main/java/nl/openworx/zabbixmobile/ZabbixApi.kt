@@ -307,7 +307,19 @@ class ZabbixApi(
             val json = JSONObject(text)
             if (json.has("error")) {
                 val err = json.getJSONObject("error")
-                throw ApiException("${err.optString("message")} ${err.optString("data")}".trim())
+                val full = "${err.optString("message")} ${err.optString("data")}".trim()
+                // Zabbix returns "Invalid params. / Session terminated, re-login, please."
+                // (or "Not authorised.") when the API token is not accepted.
+                if (full.contains("re-login", ignoreCase = true) ||
+                    full.contains("Not authorised", ignoreCase = true) ||
+                    full.contains("Not authorized", ignoreCase = true)
+                ) {
+                    throw ApiException(
+                        "API token rejected by the server. Check the token " +
+                            "(Zabbix → Users → API tokens), its expiry date and whether it is enabled."
+                    )
+                }
+                throw ApiException(full)
             }
             return json
         } finally {
